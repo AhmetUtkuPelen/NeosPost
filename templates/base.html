@@ -9,9 +9,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    {% include "partials/_navbar.html" %}
-    {% block content %}
-    {% endblock content %}
+
+    <div class="max-w-3/4">
+      {% include "partials/_navbar.html" %}
+      {% block content %}
+      {% endblock content %}
+    </div>
+    {% include "partials/_sidebar.html"%}
+
 
     <script src="{% static 'script/script.js' %}"></script>
   </body>
