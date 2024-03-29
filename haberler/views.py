@@ -17,5 +17,4 @@ def index(request):
     context = {
         'news': response,
     }
-    print(context)
     return render(request,'haberler/index.html', context=context)
