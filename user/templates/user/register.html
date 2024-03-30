@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Login Page{% endblock title %}
+{% include "partials/_header.html" %}
+{% block content %}
+<form method="POST" novalidate>
+{% csrf_token %}
+{% for field in form %}
+{% if field.errors %}
+<div class="alert alert-danger w-100">
+    {{field.errors}}
+</div>
+{% endif %}
+<div>
+<div class="mx-5">{{field.help_text}}</div>
+</div>
+<label for="field.id_for_label" class="mx-5 text-primary">{{field.label}}</label>
+<div class="mx-5">
+{{field}}
+</div>
+{% endfor %}
+<button type="submit" value="REGISTER" class="btn btn-blue-600 bg-blue-600 text-white mt-2 mx-5">Kayıt Ol</button>
+</form>
+{% endblock content %}
+{% include "partials/_footer.html" %}
